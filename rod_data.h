@@ -7,7 +7,7 @@
 typedef struct {
     int length;
     int value;
-    int max_cuts;  // 0 = no limit, >0 = max allowed cuts
+    int max_cuts;
 } RodPiece;
 
 void read_rod_data(const char *filename, RodPiece rod_pieces[], int *count_ptr);
