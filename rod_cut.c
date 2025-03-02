@@ -11,9 +11,8 @@ int maximize_value(const RodPiece rod_pieces[], int count, int remaining_length,
     // Generate a unique cache key based on remaining_length and cut_state
     int key = remaining_length;
     for (int i = 0; i < count; i++)
-        key = key * 31 + cut_state->remaining_cuts[i];  // Simple hash
+        key = key * 31 + cut_state->remaining_cuts[i];
 
-    // Check cache
     int cached_value = cache_get(cache, key);
     if (cached_value != -1)
         return cached_value;
@@ -50,7 +49,6 @@ int maximize_value(const RodPiece rod_pieces[], int count, int remaining_length,
         }
     }
 
-    // Update cache
     cache_put(cache, key, max_value);
     return max_value;
 }
